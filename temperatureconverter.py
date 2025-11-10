@@ -20,6 +20,10 @@ def celsius_to_fahrenheit():
     except ValueError:
         messagebox.showerror("Invalid Input", "Please enter a valid number for Celsius.")
 
+def clear_fields():
+    fahrenheit_var.set("32.0")
+    celsius_var.set("0.0")
+
 # --- Create main window ---
 window = tk.Tk()
 window.title("Temperature Converter")
@@ -47,5 +51,9 @@ to_celsius_btn.grid(row=2, column=0, padx=10, pady=10)
 to_fahrenheit_btn = tk.Button(window, text="<<<<", command=celsius_to_fahrenheit)
 to_fahrenheit_btn.grid(row=2, column=1, padx=10, pady=10)
 
+clear_btn = tk.Button(window, text="Clear", command=clear_fields)
+clear_btn.grid(row=3, column=0, columnspan=2, pady=5)
+
 # --- Run the GUI loop ---
 window.mainloop()
+
